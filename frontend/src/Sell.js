@@ -23,11 +23,6 @@ class Sell extends Component {
         return (
             <Col style={{ maxHeight: "300px" }}>
                 <MenuItem name={item.name} description={item.description} image={item.image} price={item.price} ingredients={item.ingredients}></MenuItem>
-                <a href="https://www.mcdonalds.com/us/en-us/full-menu.html" download="menu">
-                    <Button style={{ fontSize: "2em" }} variant="primary">
-                        Order
-                        </Button>
-                </a>
             </Col>
         )
     }
@@ -70,7 +65,6 @@ class Sell extends Component {
                     {this.render_menu_cards()}
                     <hr></hr>
                 </Container>
-
             </div>
         )
     }

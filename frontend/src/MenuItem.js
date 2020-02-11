@@ -23,18 +23,16 @@ class MenuItem extends Component {
 
     render() {
         return (
-            <Card style={{ width: "200px" }}>
+            <Card style={{ width: "250px", height: "525px" }}>
                 <Card.Img variant="top" src={images[this.props.image]} style={{ maxWidth: "300px" }} />
                 <Card.Body>
                     <Card.Title>{this.props.name}</Card.Title>
-                    <Card.Text>
-                        {this.props.description}
-                    </Card.Text>
                     <Card.Text>
                         <b>${this.props.price.toFixed(2)}</b>
                     </Card.Text>
                     <Card.Text>
                         Artist: {this.props.artist}
+                        <br></br>
                         Album : {this.props.album}
                     </Card.Text>
                     <a href="https://www.mcdonalds.com/us/en-us/full-menu.html" download="menu">

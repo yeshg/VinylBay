@@ -21,9 +21,10 @@ class Buy extends Component {
     handle_new_query = (query) => {
         let newitems = []
         for (let i = 0; i < items.length; i++) {
-            let lower_description = items[i].description.toLowerCase()
+            let lower_album = items[i].album.toLowerCase()
             let lower_name = items[i].name.toLowerCase()
-            if (lower_description.includes(query) || lower_name.includes(query)) (
+            let lower_artist = items[i].artist.toLowerCase()
+            if (lower_name.includes(query) || lower_album.includes(query) || lower_artist.includes(query)) (
                 newitems.push(items[i])
             )
         }
@@ -54,7 +55,7 @@ class Buy extends Component {
     render_menu_card = (item) => {
         return (
             <Col style={{ maxHeight: "300px" }}>
-                <MenuItem name={item.name} description={item.description} image={item.image} price={item.price} ingredients={item.ingredients}></MenuItem>
+                <MenuItem name={item.name} description={item.description} image={item.image} price={item.price} album={item.album} artist={item.artist}></MenuItem>
             </Col>
         )
     }
@@ -73,13 +74,6 @@ class Buy extends Component {
                 <MenuBar></MenuBar>
 
                 <h1 style={{ textAlign: "center" }}>Our Menu</h1>
-                <Col style={{ textAlign: "center" }}>
-                    <a href={file} download>
-                        <Button style={{ fontSize: "2em" }} variant="primary">
-                            Download Our Menu
-                        </Button>
-                    </a>
-                </Col>
                 <hr></hr>
                 <Container>
                     <MenuFilter new_query={this.handle_new_query}></MenuFilter>
