@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import App from './App'
-import Menu from './Menu'
-import Contact from './Contact'
-import Order from './Order'
+import Buy from './Buy'
+import Profile from './Profile'
+import Sell from './Sell'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import MenuInfo from './MenuInfo';
 
@@ -15,9 +15,9 @@ class Routes extends Component {
         return (
             <Router>
                 <Route exact path={process.env.PUBLIC_URL + '/'} component={App} />
-                <Route exact path={process.env.PUBLIC_URL + '/menu'} component={Menu} />
-                <Route exact path={process.env.PUBLIC_URL + '/order'} component={Order} />
-                <Route exact path={process.env.PUBLIC_URL + '/contact'} component={Contact} />\
+                <Route exact path={process.env.PUBLIC_URL + '/buy'} component={Buy} />
+                <Route exact path={process.env.PUBLIC_URL + '/sell'} component={Sell} />
+                <Route exact path={process.env.PUBLIC_URL + '/profile'} component={Profile} />\
             </Router>
         );
     }

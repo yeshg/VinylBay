@@ -5,7 +5,7 @@ import { Button } from 'react-bootstrap'
 import { Container } from 'react-bootstrap'
 
 
-class Contact extends Component {
+class Profile extends Component {
 
     submitClick = event => {
         event.preventDefault()
@@ -25,5 +25,5 @@ class Contact extends Component {
     }
 }
 
-export default Contact
+export default Profile
 

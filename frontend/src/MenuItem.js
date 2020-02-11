@@ -21,15 +21,9 @@ class MenuItem extends Component {
         this.state = {};
     }
 
-    render_ingredients() {
-        return this.props.ingredients.map((ingredient) => {
-            return <li>{ingredient}</li>
-        })
-    }
-
     render() {
         return (
-            <Card style={{ maxWidth: "300px" }}>
+            <Card style={{ width: "200px" }}>
                 <Card.Img variant="top" src={images[this.props.image]} style={{ maxWidth: "300px" }} />
                 <Card.Body>
                     <Card.Title>{this.props.name}</Card.Title>
@@ -40,11 +34,14 @@ class MenuItem extends Component {
                         <b>${this.props.price.toFixed(2)}</b>
                     </Card.Text>
                     <Card.Text>
-                        Ingredients:
+                        Artist: {this.props.artist}
+                        Album : {this.props.album}
                     </Card.Text>
-                    <ul>
-                        {this.render_ingredients()}
-                    </ul>
+                    <a href="https://www.mcdonalds.com/us/en-us/full-menu.html" download="menu">
+                    <Button style={{ fontSize: "2em" }} variant="primary">
+                        Order
+                        </Button>
+                </a>
                 </Card.Body>
             </Card>
         );

@@ -10,7 +10,7 @@ import { Button } from 'react-bootstrap'
 const file = require("./assets/menu.txt")
 const items = require('./assets/items/items.json').items
 
-class Menu extends Component {
+class Buy extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -44,7 +44,7 @@ class Menu extends Component {
         }
         return split_items.map((row) => {
             return (
-                <Row style={{ paddingBottom: "250px" }}>
+                <Row style={{ paddingBottom: "250px"}}>
                     {this.render_split_row(row)}
                 </Row>
             )
@@ -95,4 +95,4 @@ class Menu extends Component {
     }
 }
 
-export default Menu;
+export default Buy;

@@ -6,12 +6,12 @@ import { Container } from 'react-bootstrap'
 import { Row, Col } from 'react-bootstrap'
 import MenuItem from './MenuItem'
 import { ListGroup } from 'react-bootstrap'
-import logo from './assets/logo.png'
+import logo from './assets/logo.jpg'
 
 
 const items = require('./assets/items/items.json').items
 
-class Order extends Component {
+class Sell extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -76,5 +76,5 @@ class Order extends Component {
     }
 }
 
-export default Order;
+export default Sell;
 

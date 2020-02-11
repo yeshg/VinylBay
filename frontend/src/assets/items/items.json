@@ -1,76 +1,39 @@
 {
     "items": [
         {
-            "name": "McBurger",
-            "price": 3.75,
-            "image": "burger.jpg",
-            "description": "Our famous burger now with McPickles!",
-            "ingredients": [
-                "Beef",
-                "Bun",
-                "Pickles",
-                "Sauce"
-            ]
+            "name": "Nirvana - Nevermind [New Vinyl]",
+            "price": 33.23,
+            "image": "nirvana.jpg",
+            "artist": "Nirvana",
+            "album": "Nevermind"
         },
         {
-            "name": "McPoutine",
-            "price": 4.30,
-            "image": "poutine.jpg",
-            "description": "Our take on a Canadian delicacy",
-            "ingredients": [
-                "Fries",
-                "Gravy",
-                "Cheese"
-            ]
+            "name": "Tool - Opiate [EP]",
+            "price": 3.23,
+            "image": "tool.jpg",
+            "artist": "Tool",
+            "album": "Opiate"
         },
         {
-            "name": "McHummus",
-            "price": 2.00,
-            "image": "hummus.jpg",
-            "description": "Don't forget to buy those yummy McChips!",
-            "ingredients": [
-                "Chickpeas",
-                "Oil",
-                "Garlic",
-                "Salt"
-            ]
+            "name": "The Weeknd - Trilogy [Box Set]",
+            "price": 995.00,
+            "image": "weeknd.jpg",
+            "artist": "TheWeeknd",
+            "album": "Trilogy"
         },
         {
-            "name": "McDongle",
-            "price": 16.00,
-            "image": "dongle.jpg",
-            "description": "...",
-            "ingredients": [
-                "Plastic",
-                "Rubber",
-                "Metal"
-            ]
+            "name": "Rachmaninov Piano Concerto 2",
+            "price": 10.50,
+            "image": "rachmaninov.jpg",
+            "artist": "Rachmaninov",
+            "album": "Piano Concerto 2"
         },
         {
-            "name": "McFries",
-            "price": 1.00,
-            "image": "fries.jpg",
-            "description": "Dip these fries into your McFlurry shake!",
-            "ingredients": [
-                "Potato",
-                "Salt",
-                "Love",
-                "Cronch",
-                "Corn oil"
-            ]
-        },
-        {
-            "name": "McFlurry",
-            "price": 5.00,
-            "image": "flurry.jpg",
-            "description": "A great treat for an afternoon in the sun!",
-            "ingredients": [
-                "Milk",
-                "Oreo",
-                "Sugar",
-                "Cream",
-                "M&Ms"
-            ]
+            "name": "Samurai Champloo Nujabes Vinyl 3 LP Green",
+            "price": 144.00,
+            "image": "champloo.jpg",
+            "artist": "Nujabes",
+            "album": "Samurai Champloo"
         }
     ]
 }

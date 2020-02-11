@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Carousel from 'react-bootstrap/Carousel'
-import burger from './assets/burger.jpg'
-import hummus from './assets/hummus.jpg'
-import poutine from './assets/poutine.jpg'
+import champloo from './assets/champloo.jpg'
+import nirvana from './assets/nirvana.jpg'
+import rachmaninov from './assets/rachmaninov.jpg'
 
 class MenuCarousel extends Component {
     constructor(props) {
@@ -15,8 +15,8 @@ class MenuCarousel extends Component {
                 <Carousel.Item controls = {true}>
                     <img
                         className="d-block w-100"
-                        src={burger}
-                        alt="Burger"
+                        src={champloo}
+                        alt="Champloo"
                     />
                     <Carousel.Caption>
                         <h1>Try the original McBurger</h1>
@@ -26,8 +26,8 @@ class MenuCarousel extends Component {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src={hummus}
-                        alt="Hummus"
+                        src={nirvana}
+                        alt="Nirvana"
                     />
 
                     <Carousel.Caption>
@@ -38,8 +38,8 @@ class MenuCarousel extends Component {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src={poutine}
-                        alt="Poutine"
+                        src={rachmaninov}
+                        alt="Rachmaninov"
                     />
 
                     <Carousel.Caption>

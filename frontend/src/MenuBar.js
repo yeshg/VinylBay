@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MenuInfo from './MenuInfo';
 import Navbar from 'react-bootstrap/Navbar'
-import logo from './assets/logo.png'
+import logo from './assets/logo.jpg'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import Nav from 'react-bootstrap/Nav'
 import Form from 'react-bootstrap/Form'
@@ -21,22 +21,22 @@ class MenuBar extends Component {
                 <Navbar.Brand style={{ paddingRight: "50px" }}>
                     <Link to={process.env.PUBLIC_URL + '/'} >
                         <img src={logo} style={{ maxHeight: "75px", paddingRight: "20px" }}></img>
-                        <span style={{ fontSize: "40px", fontFamily: "Comic Sans MS", color: "yellow" }}>McDongles</span>
+                        <span style={{ fontSize: "40px", fontFamily: "Comic Sans MS", color: "yellow" }}>VinylBay</span>
                     </Link>
                 </Navbar.Brand>
                 <Nav.Link>
-                    <Link to={process.env.PUBLIC_URL + '/menu'}  >
-                        <span style={{ fontSize: "40px", color: "White" }}>Menu</span>
+                    <Link to={process.env.PUBLIC_URL + '/buy'}  >
+                        <span style={{ fontSize: "40px", color: "White" }}>Buy</span>
                     </Link>
                 </Nav.Link>
-                <Nav.Link>
-                    <Link to={process.env.PUBLIC_URL + '/order'}  >
-                        <span style={{ fontSize: "40px", color: "White" }}>Order</span>
+                {/* <Nav.Link>
+                    <Link to={process.env.PUBLIC_URL + '/sell'}  >
+                        <span style={{ fontSize: "40px", color: "White" }}>Sell</span>
                     </Link>
-                </Nav.Link>
+                </Nav.Link> */}
                 <Nav.Link>
-                    <Link to={process.env.PUBLIC_URL + '/contact'}  >
-                        <span style={{ fontSize: "40px", color: "White" }}>Contact</span>
+                    <Link to={process.env.PUBLIC_URL + '/profile'}  >
+                        <span style={{ fontSize: "40px", color: "White" }}>Profile</span>
                     </Link>
                 </Nav.Link>
             </Navbar>
