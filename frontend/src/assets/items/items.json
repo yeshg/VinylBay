@@ -1,0 +1,76 @@
+{
+    "items": [
+        {
+            "name": "McBurger",
+            "price": 3.75,
+            "image": "burger.jpg",
+            "description": "Our famous burger now with McPickles!",
+            "ingredients": [
+                "Beef",
+                "Bun",
+                "Pickles",
+                "Sauce"
+            ]
+        },
+        {
+            "name": "McPoutine",
+            "price": 4.30,
+            "image": "poutine.jpg",
+            "description": "Our take on a Canadian delicacy",
+            "ingredients": [
+                "Fries",
+                "Gravy",
+                "Cheese"
+            ]
+        },
+        {
+            "name": "McHummus",
+            "price": 2.00,
+            "image": "hummus.jpg",
+            "description": "Don't forget to buy those yummy McChips!",
+            "ingredients": [
+                "Chickpeas",
+                "Oil",
+                "Garlic",
+                "Salt"
+            ]
+        },
+        {
+            "name": "McDongle",
+            "price": 16.00,
+            "image": "dongle.jpg",
+            "description": "...",
+            "ingredients": [
+                "Plastic",
+                "Rubber",
+                "Metal"
+            ]
+        },
+        {
+            "name": "McFries",
+            "price": 1.00,
+            "image": "fries.jpg",
+            "description": "Dip these fries into your McFlurry shake!",
+            "ingredients": [
+                "Potato",
+                "Salt",
+                "Love",
+                "Cronch",
+                "Corn oil"
+            ]
+        },
+        {
+            "name": "McFlurry",
+            "price": 5.00,
+            "image": "flurry.jpg",
+            "description": "A great treat for an afternoon in the sun!",
+            "ingredients": [
+                "Milk",
+                "Oreo",
+                "Sugar",
+                "Cream",
+                "M&Ms"
+            ]
+        }
+    ]
+}
