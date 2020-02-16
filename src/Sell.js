@@ -1,74 +1,34 @@
-import React, { Component } from 'react'
-import WebForm from "./Form"
-import MenuBar from './MenuBar';
+import React, { Component } from 'react';
+import PostVinyl from './PostVinyl'
+import VinylEntry from './Vinyl/VinylEntry'
+import NavigationBar from './NavigationBar'
+import VinylFilter from './Vinyl/VinylFilter'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 import { Button } from 'react-bootstrap'
-import { Container } from 'react-bootstrap'
-import { Row, Col } from 'react-bootstrap'
-import MenuItem from './MenuItem'
-import { ListGroup } from 'react-bootstrap'
-import logo from './assets/logo.jpg'
 
-
-const items = require('./assets/items/items.json').items
+const file = require("./assets/menu.txt")
+const items = require('./assets/items/get_vinyls.json')
 
 class Sell extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            filtered_menu: items
-        };
-    }
-
-    render_menu_card = (item) => {
-        return (
-            <Col style={{ maxHeight: "300px" }}>
-                <MenuItem name={item.name} description={item.description} image={item.image} price={item.price} ingredients={item.ingredients}></MenuItem>
-            </Col>
-        )
-    }
-
-    render_split_row = (row) => {
-        return (
-            row.map((item) => {
-                return this.render_menu_card(item)
-            })
-        )
-    }
-
-    render_menu_cards = () => {
-        let split_items = [];
-        let j = -1;
-        for (let i = 0; i < this.state.filtered_menu.length; i++) {
-            if (i % 4 === 0) {
-                split_items.push([])
-                j++
-            }
-            split_items[j].push(this.state.filtered_menu[i])
-        }
-        return split_items.map((row) => {
-            return (
-                <Row style={{ paddingBottom: "250px" }}>
-                    {this.render_split_row(row)}
-                </Row>
-            )
-        })
     }
 
     render() {
         return (
             <div>
-                <MenuBar></MenuBar>
+                <NavigationBar username={this.props.username}></NavigationBar>
+                <hr></hr>
+                <h1 style={{ textAlign: "center" }}>Sell Your Vinyl</h1>
+                <hr></hr>
                 <Container>
-                    <hr></hr>
-                    <h1 style={{ textAlign: "center" }}>Our Menu</h1>
-                    <hr></hr>
-                    {this.render_menu_cards()}
-                    <hr></hr>
+                    <PostVinyl username={this.props.username}></PostVinyl>
                 </Container>
             </div>
-        )
+        );
     }
 }
 
 export default Sell;
-

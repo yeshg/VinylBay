@@ -1,0 +1,42 @@
+[
+    {
+        "vinylID": 1,
+        "name": "Nevermind",
+        "genre": "Alternative/Indie",
+        "description": "Nevermind is the second studio album by American rock band Nirvana, released on September 24, 1991, by DGC Records.",
+        "price": 33.23,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/en/b/b7/NirvanaNevermindalbumcover.jpg"
+    },
+    {
+        "vinylID": 2,
+        "name": "Opiate",
+        "genre": "Rock",
+        "description": "Opiate is an EP by American rock band Tool. It was produced and engineered by Sylvia Massy and former Minor Threat bassist Steve Hansgen. Released in 1992, it was the result of some two years of the band playing together after their formation in 1990.",
+        "price": 3.23,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/en/3/3b/Tool-Opiate.jpg"
+    },
+    {
+        "vinylID": 3,
+        "name": "Samurai Champloo Music Record: Departure",
+        "genre": "Instrumental",
+        "description": "Samurai Champloo Music Record: Departure is a soundtrack album, released on June 23, 2004, for the anime series Samurai Champloo. It is the second of four soundtrack albums released for the show. The album was produced by Japanese DJ/producer Nujabes, and American MC/producer Fat Jon, and featured Japanese rapper Shing02 and Japanese singer-songwriter MINMI on the album's first and last tracks, respectively.",
+        "price": 144,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/en/8/86/SamuraiChamploo-Departure.jpg"
+    },
+    {
+        "vinylID": 4,
+        "name": "Rachmaninov: Piano Concertos Nos. 1 & 2",
+        "genre": "Classical",
+        "description": "These are fine performances. Zimerman's playing can be somewhat self-conscious, and at times he seems to be aware that he ought to say something new about these well-known works, but he's never less than animated. The first concerto comes across as stylish and warm, with the melodies clear amidst the sheer brilliance of the playing and the rhythms strongly underlined. The lack of mania is most welcome. (Earl Wild's performance of this work on Chandos, however, is more spectacular than any other.) The second, better-known work, is an honest, straightforward reading, with the first movement's finale expansive and grand, an Adagio of surprising affection and meditation, and a final movement in which the very familiar second melody shows up almost surprisingly in its freshness.",
+        "price": 10.5,
+        "imageURL": "https://images-na.ssl-images-amazon.com/images/I/71syf1MTluL._SL1400_.jpg"
+    },
+    {
+        "vinylID": 5,
+        "name": "Trilogy",
+        "genre": "R&B",
+        "description": "Trilogy is a compilation album by Canadian singer The Weeknd. It was released on 13 November 2012 through XO and distributed by Republic Records. It is composed of re-mixed and remastered versions of his 2011 mixtapes House of Balloons, Thursday, and Echoes of Silence, and three previously-unreleased songs.",
+        "price": 995,
+        "imageURL": "https://upload.wikimedia.org/wikipedia/en/9/96/The_Weeknd_-_Trilogy.png"
+    }
+]
