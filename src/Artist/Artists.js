@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ArtistEntry from './ArtistEntry'
 import NavigationBar from '../NavigationBar'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
@@ -62,7 +61,7 @@ class Artists extends Component {
 
     render_artist = (item) => {
         return (
-            <Link to={{pathname: process.env.PUBLIC_URL + '/artist' + item.artistID, state:{username: this.props.username}}}>
+            <Link to={{pathname: process.env.PUBLIC_URL + '/artists' + item.artistID, state:{username: this.props.username, artistname: item.name}}}>
             <h3 style={{ textAlign: "center" }}>{item.name}</h3>
             </Link>
         )

@@ -46,6 +46,41 @@ app.get('/get_artists', function (req, res, next) {
     });
 });
 
+app.post('/get_artist', function (req, res, next) {
+    console.log(req.body)
+    mysql.pool.query("SELECT * FROM Artists WHERE artistID=?", [req.body.artistID], function (err, rows, result) {
+        if (err) {
+            res.status(500).send(err)
+            return;
+        }
+        res.send(rows)
+    });
+});
+
+app.post('/get_artist_vinyls', function (req, res, next) {
+    console.log(req.body)
+    mysql.pool.query("SELECT Vinyls.* FROM Vinyls_Artists INNER JOIN Vinyls ON Vinyls_Artists.vinylID=Vinyls.vinylID AND artistID=?", [req.body.artistID], function (err, rows, result) {
+        if (err) {
+            res.status(500).send(err)
+            return;
+        }
+        res.send(rows)
+    });
+});
+
+app.post('/get_vinyl_artists', function (req, res, next) {
+    console.log(req.body)
+    mysql.pool.query("SELECT Artists.name FROM Vinyls_Artists INNER JOIN Artists ON Vinyls_Artists.artistID=Artists.artistID AND vinylID=?", [req.body.vinylID], function (err, rows, result) {
+        if (err) {
+            res.status(500).send(err)
+            return;
+        }
+        res.send(rows)
+    });
+});
+
+
+
 app.post('/add_artist', function (req, res, next){
     console.log(req.body)
     mysql.pool.query("INSERT INTO Artists (name) VALUES (?)", [req.body.name], function (err, result) {
@@ -67,6 +102,21 @@ app.post('/get_vinyl', function (req, res, next) {
         }
         res.send(rows)
     });
+});
+
+app.post('/delete_vinyl', function (req, res, next) {
+    console.log(req.body)
+    mysql.pool.query("DELETE FROM Vinyls_Artists WHERE vinylID=?; DELETE FROM Vinyls WHERE vinylID=?",
+        [req.body.vinylID, req.body.vinylID],
+        function (err, result) {
+            if (err) {
+                res.status(500).send(err)
+                console.log(err)
+                return;
+
+            }
+            res.send("Deleted Documents")
+        });
 });
 
 app.post('/get_reviews', function (req, res, next) {
@@ -132,18 +182,6 @@ app.post('/sell_vinyls', function (req, res, next) {
     });
 });
 
-app.post('/sell_vinyls', function (req, res, next) {
-    console.log(req.body)
-
-    mysql.pool.query("INSERT INTO Vinyls (`name`, `genre`, `description`, `price`, `imageURL`, `userID`) VALUES (?, ?, ?, ?, ?, (SELECT userID FROM Users WHERE username=?))", [req.body.name, req.body.genre, req.body.description, req.body.price, req.body.imageURL, req.body.username], function (err, result) {
-        if (err) {
-            res.status(500).send(err)
-            console.log(err)
-            return;
-        }
-        res.send("Inserted Documents")
-    });
-});
 
 app.post('/edit_review', function (req, res, next) {
     console.log(req.body)

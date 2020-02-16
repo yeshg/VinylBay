@@ -4,6 +4,7 @@ import Buy from './Vinyl/Buy'
 import Artists from './Artist/Artists'
 import Sell from './Sell'
 import VinylPage from './Vinyl/VinylPage'
+import ArtistPage from './Artist/ArtistPage'
 import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
 
 class Routes extends Component {
@@ -46,6 +47,7 @@ class Routes extends Component {
                     <Route exact path={process.env.PUBLIC_URL + '/sell'} render={() => <Sell username={this.state.username} />} />
                     <Route exact path={process.env.PUBLIC_URL + '/artists'} render={() => <Artists username={this.state.username} />}/>
                     <Route path={"/vinyl:id"} component={VinylPage} />
+                    <Route path={"/artists:id"} component={ArtistPage} />
                 </>
             );
         }

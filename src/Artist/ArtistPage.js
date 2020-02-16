@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import VinylEntry from './VinylEntry'
+import VinylEntry from '../Vinyl/VinylEntry'
 import NavigationBar from '../NavigationBar'
-import VinylFilter from './VinylFilter'
+import VinylFilter from '../Vinyl/VinylFilter'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -10,7 +10,7 @@ import { Button } from 'react-bootstrap'
 const file = require("../assets/menu.txt")
 // const items = require('./assets/items/get_vinyls.json')
 
-class Buy extends Component {
+class ArtistPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -19,20 +19,48 @@ class Buy extends Component {
         };
     }
 
-    fetch_vinyls = () => {
-        fetch("http://flip2.engr.oregonstate.edu:15204/get_vinyls", {
-            method: "GET",
+    componentDidMount() {
+        this.setState({ url_id: this.props.match.params.id })
+        console.log(this.props.location)
+        this.setState({ login_name: this.props.location.state.username })
+        this.fetch_artist(this.props.match.params.id)
+        this.fetch_artist_vinyls(this.props.match.params.id)
+    }
+
+    fetch_artist = (id) => {
+        fetch("http://flip2.engr.oregonstate.edu:15204/get_artist", {
+            method: "POST",
             headers: {
                 'Content-Type': 'application/json',
                 // 'Content-Type': 'application/x-www-form-urlencoded',
             },
+            body: JSON.stringify({ artistID: id }),
         })
             .then((response) => {
-                response.json() 
+                response.json()
                     .then(
                         (result) => {
-                            this.setState({vinyls: result,
-                            filtered_vinyl: result})
+                            let data = result[0]
+                            this.setState(data)
+                        })
+            }
+            )
+    }
+
+    fetch_artist_vinyls = (id) => {
+        fetch("http://flip2.engr.oregonstate.edu:15204/get_artist_vinyls", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: JSON.stringify({ artistID: id }),
+        })
+            .then((response) => {
+                response.json()
+                    .then(
+                        (result) => {
+                            this.setState({vinyls: result, filtered_vinyl: result})
                         })
             }
             )
@@ -65,7 +93,7 @@ class Buy extends Component {
         }
         return split_items.map((row) => {
             return (
-                <Row style={{ paddingBottom: "250px"}}>
+                <Row style={{ paddingBottom: "250px" }}>
                     {this.render_split_row(row)}
                 </Row>
             )
@@ -75,7 +103,7 @@ class Buy extends Component {
     render_vinyl_card = (item) => {
         return (
             <Col style={{ maxHeight: "300px" }}>
-                <VinylEntry deleteable={this.props.username == item.username} id={item.vinylID} name={item.name} username={this.props.username} genre={item.genre} description={item.description} price={item.price} imageURL={item.imageURL} refetch={this.fetch_vinyls}></VinylEntry>
+                <VinylEntry id={item.vinylID} name={item.name} username={this.state.login_name} genre={item.genre} description={item.description} price={item.price} imageURL={item.imageURL}></VinylEntry>
             </Col>
         )
     }
@@ -88,10 +116,6 @@ class Buy extends Component {
         )
     }
 
-    componentDidMount = () =>{
-        this.fetch_vinyls()
-    }
-
     submitClick = event => {
         event.preventDefault()
         alert("Form submitted")
@@ -100,9 +124,9 @@ class Buy extends Component {
     render() {
         return (
             <div>
-                <NavigationBar username={this.props.username}></NavigationBar>
+                <NavigationBar username={this.state.login_name}></NavigationBar>
                 <hr></hr>
-                <h1 style={{ textAlign: "center" }}>Buy Vinyls</h1>
+                <h1 style={{ textAlign: "center" }}>{this.state.name + "'s"} Vinyls</h1>
                 <hr></hr>
                 <Container>
                     <VinylFilter new_query={this.handle_new_query}></VinylFilter>
@@ -118,4 +142,4 @@ class Buy extends Component {
     }
 }
 
-export default Buy;
+export default ArtistPage;
