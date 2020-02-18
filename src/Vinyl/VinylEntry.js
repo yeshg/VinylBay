@@ -28,7 +28,7 @@ class VinylEntry extends Component {
         let request_body={
             vinylID: this.props.id,
         }
-        fetch("https://flip2.engr.oregonstate.edu:15204/delete_vinyl", {
+        fetch("http://flip2.engr.oregonstate.edu:15204/delete_vinyl", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',

@@ -32,7 +32,7 @@ class PostVinyl extends Component {
 
         request_body.artists = this.state.artists_text.split(",").map((e) => {return(e.trim())})
 
-        fetch("https://flip2.engr.oregonstate.edu:15204/sell_vinyls", {
+        fetch("http://flip2.engr.oregonstate.edu:15204/sell_vinyls", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',

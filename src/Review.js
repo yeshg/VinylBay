@@ -21,7 +21,7 @@ class Review extends Component {
         let request_body={
             reviewID: this.props.reviewID,
         }
-        fetch("https://flip2.engr.oregonstate.edu:15204/delete_review", {
+        fetch("http://flip2.engr.oregonstate.edu:15204/delete_review", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ class Review extends Component {
             reviewID: this.props.reviewID,
             reviewBody: this.state.reviewBody,
         }
-        fetch("https://flip2.engr.oregonstate.edu:15204/edit_review", {
+        fetch("http://flip2.engr.oregonstate.edu:15204/edit_review", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',

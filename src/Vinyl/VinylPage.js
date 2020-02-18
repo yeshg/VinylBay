@@ -21,12 +21,12 @@ class VinylPage extends Component {
             reviewBody: "",
             reviews: [
                 {
-                    username: "Yigga",
-                    reviewBody: "Trigga"
+                    username: "",
+                    reviewBody: ""
                 },
                 {
-                    username: "Yigga",
-                    reviewBody: "Quiga"
+                    username: "",
+                    reviewBody: ""
                 }
             ]
         };
@@ -42,7 +42,7 @@ class VinylPage extends Component {
     }
 
     fetch_vinyl = (id) => {
-        fetch("https://flip2.engr.oregonstate.edu:15204/get_vinyl", {
+        fetch("http://flip2.engr.oregonstate.edu:15204/get_vinyl", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ class VinylPage extends Component {
     }
 
     fetch_reviews = (id) => {
-        fetch("https://flip2.engr.oregonstate.edu:15204/get_reviews", {
+        fetch("http://flip2.engr.oregonstate.edu:15204/get_reviews", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -81,7 +81,7 @@ class VinylPage extends Component {
     }
 
     refetch = () =>{
-        fetch("https://flip2.engr.oregonstate.edu:15204/get_reviews", {
+        fetch("http://flip2.engr.oregonstate.edu:15204/get_reviews", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -100,7 +100,7 @@ class VinylPage extends Component {
     }
 
     add_review = (reviewBody, id) => {
-        fetch("https://flip2.engr.oregonstate.edu:15204/add_review", {
+        fetch("http://flip2.engr.oregonstate.edu:15204/add_review", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
