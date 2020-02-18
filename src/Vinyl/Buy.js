@@ -20,7 +20,7 @@ class Buy extends Component {
     }
 
     fetch_vinyls = () => {
-        fetch("http://flip2.engr.oregonstate.edu:15204/get_vinyls", {
+        fetch("https://flip2.engr.oregonstate.edu:15204/get_vinyls", {
             method: "GET",
             headers: {
                 'Content-Type': 'application/json',

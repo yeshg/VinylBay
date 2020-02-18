@@ -17,7 +17,7 @@ class Artists extends Component {
     }
 
     handle_submit_artist = () => {
-        fetch("http://flip2.engr.oregonstate.edu:15204/add_artist", {
+        fetch("https://flip2.engr.oregonstate.edu:15204/add_artist", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -32,7 +32,7 @@ class Artists extends Component {
     }
 
     fetch_artists = () => {
-        fetch("http://flip2.engr.oregonstate.edu:15204/get_artists", {
+        fetch("https://flip2.engr.oregonstate.edu:15204/get_artists", {
             method: "GET",
             headers: {
                 'Content-Type': 'application/json',

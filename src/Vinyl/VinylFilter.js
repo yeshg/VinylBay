@@ -15,7 +15,7 @@ class VinylFilter extends Component {
     render() {
         return (
             <div>
-                <Form method="POST" action="http://web.engr.oregonstate.edu/~zhangluy/tools/class-content/form_tests/check_request.php">
+                <Form method="POST" action="https://web.engr.oregonstate.edu/~zhangluy/tools/class-content/form_tests/check_request.php">
                     <Form.Group controlId="formBasicEmail">
                     {/* <Form.Label>Search</Form.Label> */}
                             <Form.Control placeholder="Search by Vinyl Name" name="first" />

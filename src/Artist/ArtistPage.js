@@ -28,7 +28,7 @@ class ArtistPage extends Component {
     }
 
     fetch_artist = (id) => {
-        fetch("http://flip2.engr.oregonstate.edu:15204/get_artist", {
+        fetch("https://flip2.engr.oregonstate.edu:15204/get_artist", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ class ArtistPage extends Component {
     }
 
     fetch_artist_vinyls = (id) => {
-        fetch("http://flip2.engr.oregonstate.edu:15204/get_artist_vinyls", {
+        fetch("https://flip2.engr.oregonstate.edu:15204/get_artist_vinyls", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',

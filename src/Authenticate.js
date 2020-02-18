@@ -15,7 +15,7 @@ class Authenticate extends Component {
     }
 
     log_in_user = (username, password) => {
-        fetch("http://flip2.engr.oregonstate.edu:15204/authenticate", {
+        fetch("https://flip2.engr.oregonstate.edu:15204/authenticate", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ class Authenticate extends Component {
     }
 
     sign_up_user = (username, password) => {
-        fetch("http://flip2.engr.oregonstate.edu:15204/sign_up", {
+        fetch("https://flip2.engr.oregonstate.edu:15204/sign_up", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',

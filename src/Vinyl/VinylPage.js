@@ -17,7 +17,7 @@ class VinylPage extends Component {
 
         super(props);
         this.state = {
-            url_id: "", vinylID: "", name: "Gaand", genre: "mein", price: "ungli", description: "fuck", imageURL: "https://images-cdn.9gag.com/photo/aNY8w00_460s.jpg",
+            url_id: "", vinylID: "", name: "", genre: "", price: "", description: "", imageURL: "",
             reviewBody: "",
             reviews: [
                 {
@@ -42,7 +42,7 @@ class VinylPage extends Component {
     }
 
     fetch_vinyl = (id) => {
-        fetch("http://flip2.engr.oregonstate.edu:15204/get_vinyl", {
+        fetch("https://flip2.engr.oregonstate.edu:15204/get_vinyl", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ class VinylPage extends Component {
     }
 
     fetch_reviews = (id) => {
-        fetch("http://flip2.engr.oregonstate.edu:15204/get_reviews", {
+        fetch("https://flip2.engr.oregonstate.edu:15204/get_reviews", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -81,7 +81,7 @@ class VinylPage extends Component {
     }
 
     refetch = () =>{
-        fetch("http://flip2.engr.oregonstate.edu:15204/get_reviews", {
+        fetch("https://flip2.engr.oregonstate.edu:15204/get_reviews", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -100,7 +100,7 @@ class VinylPage extends Component {
     }
 
     add_review = (reviewBody, id) => {
-        fetch("http://flip2.engr.oregonstate.edu:15204/add_review", {
+        fetch("https://flip2.engr.oregonstate.edu:15204/add_review", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
