@@ -19,16 +19,7 @@ class VinylPage extends Component {
         this.state = {
             url_id: "", vinylID: "", name: "", genre: "", price: "", description: "", imageURL: "",
             reviewBody: "",
-            reviews: [
-                {
-                    username: "",
-                    reviewBody: ""
-                },
-                {
-                    username: "",
-                    reviewBody: ""
-                }
-            ]
+            reviews: []
         };
     }
 
