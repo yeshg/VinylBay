@@ -3,8 +3,7 @@ import VinylEntry from './VinylEntry'
 import NavigationBar from '../NavigationBar'
 import VinylFilter from './VinylFilter'
 import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
+import { Form, Row, Col } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
 
 const file = require("../assets/menu.txt")
@@ -15,7 +14,8 @@ class Buy extends Component {
         super(props);
         this.state = {
             vinyls: [],
-            filtered_vinyl: []
+            filtered_vinyl: [],
+            query: ""
         };
     }
 
@@ -37,6 +37,29 @@ class Buy extends Component {
             }
             )
     }
+
+    search_vinyls = () => {
+        fetch("http://flip2.engr.oregonstate.edu:15204/search_vinyls", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: JSON.stringify({
+                query: this.state.query
+            })
+        })
+            .then((response) => {
+                response.json() 
+                    .then(
+                        (result) => {
+                            this.setState({vinyls: result,
+                            filtered_vinyl: result})
+                        })
+            }
+            )
+    }
+
 
     // handle_new_query = (query) => {
     //     let newitems = []
@@ -92,10 +115,6 @@ class Buy extends Component {
         this.fetch_vinyls()
     }
 
-    submitClick = event => {
-        event.preventDefault()
-        alert("Form submitted")
-    }
 
     render() {
         return (
@@ -104,9 +123,17 @@ class Buy extends Component {
                 <hr></hr>
                 <h1 style={{ textAlign: "center" }}>Buy Vinyls</h1>
                 <hr></hr>
+
                 <Container>
-                    <VinylFilter new_query={this.handle_new_query}></VinylFilter>
-                </Container>
+            <div>
+                <Form>
+                    {/* <Form.Label>Search</Form.Label> */}
+                            <Form.Control placeholder="Search by Vinyl Name" name="first" onChange={(e) => this.setState({ query: e.target.value })} />
+                    <Button variant="primary" onClick={this.search_vinyls}>
+                        Submit
+                    </Button>
+                </Form>
+            </div>                </Container>
 
                 <Container style={{ overflowY: "scroll" }}>
 

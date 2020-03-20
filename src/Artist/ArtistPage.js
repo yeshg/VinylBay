@@ -4,6 +4,7 @@ import NavigationBar from '../NavigationBar'
 import VinylFilter from '../Vinyl/VinylFilter'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
+import Form from 'react-bootstrap/Form'
 import Col from 'react-bootstrap/Col'
 import { Button } from 'react-bootstrap'
 
@@ -42,6 +43,29 @@ class ArtistPage extends Component {
                         (result) => {
                             let data = result[0]
                             this.setState(data)
+                        })
+            }
+            )
+    }
+
+    search_vinyls = () => {
+        fetch("http://flip2.engr.oregonstate.edu:15204/get_artist_vinyls_search", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: JSON.stringify({
+                artistID: this.props.match.params.id,
+                query: this.state.query
+            })
+        })
+            .then((response) => {
+                response.json() 
+                    .then(
+                        (result) => {
+                            this.setState({vinyls: result,
+                            filtered_vinyl: result})
                         })
             }
             )
@@ -129,7 +153,13 @@ class ArtistPage extends Component {
                 <h1 style={{ textAlign: "center" }}>{this.state.name + "'s"} Vinyls</h1>
                 <hr></hr>
                 <Container>
-                    <VinylFilter new_query={this.handle_new_query}></VinylFilter>
+                    <Form>
+                        {/* <Form.Label>Search</Form.Label> */}
+                                <Form.Control placeholder="Search by Vinyl Name" name="first" onChange={(e) => this.setState({ query: e.target.value })} />
+                        <Button variant="primary" onClick={this.search_vinyls}>
+                            Submit
+                        </Button>
+                    </Form>
                 </Container>
 
                 <Container style={{ overflowY: "scroll" }}>

@@ -5,6 +5,7 @@ import Artists from './Artist/Artists'
 import Sell from './Sell'
 import VinylPage from './Vinyl/VinylPage'
 import ArtistPage from './Artist/ArtistPage'
+import ArtistVinylPage from './Artist/ArtistVinylPage'
 import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
 
 class Routes extends Component {

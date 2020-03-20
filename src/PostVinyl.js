@@ -32,6 +32,8 @@ class PostVinyl extends Component {
 
         request_body.artists = this.state.artists_text.split(",").map((e) => {return(e.trim())})
 
+        console.log(request_body.artists);
+
         fetch("http://flip2.engr.oregonstate.edu:15204/sell_vinyls", {
             method: "POST",
             headers: {
@@ -70,7 +72,7 @@ class PostVinyl extends Component {
                         <Form.Control onChange={(e) => this.setState({ name: e.target.value })} placeholder="Vinyl Name" name="name" />
 
                         <Form.Label>Artist(s)</Form.Label>
-                        <Form.Control onChange={(e) => this.setState({ artists_text: e.target.value })} placeholder="Artists" name="artists" />
+                        <Form.Control onChange={(e) => this.setState({ artists_text: e.target.value })} placeholder="Artists separated by commas" name="artists" />
 
                         <Form.Label>Genre</Form.Label>
                         <Form.Control onChange={(e) => this.setState({ genre: e.target.value })} placeholder="Genre" name="genre" />
