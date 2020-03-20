@@ -36,6 +36,21 @@ app.get('/get_vinyls', function (req, res, next) {
     });
 });
 
+
+
+app.post('/get_reviews', function (req, res, next) {
+    mysql.pool.query('SELECT Reviews.reviewID, Reviews.reviewBody, Users.username FROM Reviews INNER JOIN Users ON Reviews.userID=Users.userID AND Reviews.vinylID=?;', [req.body.vinylID], function (err, rows, fields) {
+        console.log(req.body)
+        console.log('\'%' + req.body.query + '%\'')
+        if (err) {
+            res.status(500).send(err)
+            return;
+        }
+        console.log(rows)
+        res.send(rows)
+    });
+});
+
 app.post('/search_vinyls', function (req, res, next) {
     mysql.pool.query('SELECT Vinyls.*, Users.username FROM Vinyls INNER JOIN Users ON Vinyls.userID=Users.userID WHERE Vinyls.name LIKE '+ mysql.pool.escape('%'+req.body.query+'%'), [req.body.query], function (err, rows, fields) {
         console.log(req.body)
